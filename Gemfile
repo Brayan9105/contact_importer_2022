@@ -5,11 +5,14 @@ git_source(:github) { |_repo| "https://github.com/#{repo}.git" }
 
 ruby '3.1.3'
 
+gem 'active_storage_validations', '~> 1.0', '>= 1.0.3'
 gem 'bcrypt', '~> 3.1.7'
 gem 'bootsnap', require: false
+gem 'credit_card_validations'
 gem 'devise'
 gem 'dotenv-rails'
 gem 'importmap-rails'
+gem 'pagy', '~> 5.10'
 gem 'pg', '~> 1.1'
 gem 'puma', '~> 5.0'
 gem 'rails', '~> 7.0.4'
@@ -25,6 +28,7 @@ gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
 group :development, :test do
   gem 'awesome_print', '~> 1.9', '>= 1.9.2', require: 'ap'
+  gem 'capybara'
   gem 'factory_bot_rails', '~> 6.2'
   gem 'faker'
   gem 'pry-byebug', '~> 3.8'                      # Combine 'pry' with 'byebug'

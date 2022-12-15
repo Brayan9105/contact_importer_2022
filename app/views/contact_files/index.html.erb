@@ -1,0 +1,20 @@
+<h1>Imported Files</h1>
+
+<table>
+  <thead>
+    <th>File name</th>
+    <th>File status</th>
+    <th>Imported at</th>
+  </thead>
+  <tbody>
+    <% @contact_files.each do |contact_file| %>
+      <tr>
+        <td><%= contact_file.file.filename %></td>
+        <td><%= contact_file.status %></td>
+        <td><%= contact_file.created_at %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%== pagy_nav(@pagy) %>

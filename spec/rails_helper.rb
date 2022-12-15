@@ -5,6 +5,8 @@ require 'spec_helper'
 require 'dotenv'
 require 'simplecov'
 require 'sidekiq/testing'
+require 'active_storage_validations/matchers'
+require 'capybara/rspec'
 
 SimpleCov.start 'rails' do
   add_filter 'app/channels/application_cable/channel.rb'
@@ -50,6 +52,7 @@ RSpec.configure do |config|
   config.include Devise::Test::IntegrationHelpers, type: :request
   config.include Devise::Test::IntegrationHelpers, type: :system
   config.include Devise::Test::ControllerHelpers, type: :controller
+  config.include ActiveStorageValidations::Matchers
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
   config.fixture_path = Rails.root.join('spec/fixtures')
 

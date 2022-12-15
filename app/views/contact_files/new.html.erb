@@ -1,0 +1,26 @@
+<%= form_with model: @contact_file do |form| %>
+  <%= form.label :contact_file %>:
+  <%= form.file_field :file %>
+
+  <%= form.fields_for :contact_columns do |f| %>
+    <%= f.label :name %>:
+    <%= f.text_field :name %>
+
+    <%= f.label :date_of_birth %>:
+    <%= f.text_field :date_of_birth %>
+
+    <%= f.label :phone %>:
+    <%= f.text_field :phone %>
+
+    <%= f.label :address %>:
+    <%= f.text_field :address %>
+    
+    <%= f.label :credit_card_number %>:
+    <%= f.text_field :credit_card_number %>
+
+    <%= f.label :email %>:
+    <%= f.text_field :email %>
+  <% end %>
+
+  <%= form.submit 'Import contact file' %>
+<% end %>

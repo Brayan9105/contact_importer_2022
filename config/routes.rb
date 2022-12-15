@@ -1,9 +1,12 @@
 # frozen_string_literal: true
 
-Rails.application.routes.draw do
-  devise_for :users
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+require 'sidekiq/web'
 
-  # Defines the root path route ("/")
-  # root "articles#index"
+Rails.application.routes.draw do
+  mount Sidekiq::Web, at: '/sidekiq'
+
+  root 'contact_files#index'
+  devise_for :users
+  resources :contact_files, except: %i[edit update destroy]
+  resources :contacts, only: %i[index]
 end

@@ -1,0 +1,10 @@
+<%= @contact_file.file.filename %>
+
+<h2>Errors</h2>
+<% @contact_file.errors_log&.split(';')&.each do |error| %>
+  <ul><li><%= error %></li></ul>
+<% end %>
+
+<h2>contacts successfully imported</h2>
+
+<%= render @contact_file.contacts %>

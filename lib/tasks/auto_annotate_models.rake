@@ -56,6 +56,5 @@ if Rails.env.development?
       'with_comment' => 'true'
     )
   end
-
   Annotate.load_tasks
 end

@@ -1,0 +1,9 @@
+:max_retries: <%= ENV.fetch("SIDEKIQ_MAX_RETRIES", 5).to_i %>
+:concurrency: 10
+staging:
+  :concurrency: <%= ENV.fetch("RAILS_MAX_THREADS", 10).to_i %>
+production:
+  :concurrency: <%= ENV.fetch("RAILS_MAX_THREADS", 20).to_i %>
+:queues:
+  - default
+  - contact_files
