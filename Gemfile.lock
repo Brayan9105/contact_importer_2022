@@ -118,6 +118,8 @@ GEM
     credit_card_validations (6.0.0)
       activemodel (>= 5.2, < 7.1)
       activesupport (>= 5.2, < 7.1)
+    cssbundling-rails (1.1.2)
+      railties (>= 6.0.0)
     database_consistency (1.5.3)
       activerecord (>= 3.2)
     devise (4.8.1)
@@ -157,6 +159,8 @@ GEM
       actionpack (>= 6.0.0)
       railties (>= 6.0.0)
     iniparse (1.5.0)
+    jsbundling-rails (1.1.1)
+      railties (>= 6.0.0)
     json (2.6.2)
     kwalify (0.7.2)
     loofah (2.19.0)
@@ -402,6 +406,7 @@ DEPENDENCIES
   bundler-audit (~> 0.9.1)
   capybara
   credit_card_validations
+  cssbundling-rails (~> 1.1)
   database_consistency (~> 1.1, >= 1.1.15)
   devise
   dotenv-rails
@@ -409,6 +414,7 @@ DEPENDENCIES
   faker
   fasterer (~> 0.10.0)
   importmap-rails
+  jsbundling-rails (~> 1.1)
   overcommit (~> 0.59.1)
   pagy (~> 5.10)
   pg (~> 1.1)

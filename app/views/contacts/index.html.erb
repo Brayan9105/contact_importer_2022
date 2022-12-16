@@ -1,3 +1,17 @@
-<h2>contacts successfully imported</h2>
+<h1>contacts successfully imported</h1>
 
-<%= render @contacts %>
+<table class="table table-striped">
+  <thead>
+    <th>Name</th>
+    <th>Date of birth</th>
+    <th>Phone</th>
+    <th>Address</th>
+    <th>Credit card</th>
+    <th>Credit card network</th>
+    <th>Email</th>
+    <th>Imported at</th>
+  </thead>
+  <tbody>
+    <%= render @contacts %>
+  </tbody>
+<table>

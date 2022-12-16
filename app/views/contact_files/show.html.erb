@@ -1,10 +1,31 @@
-<%= @contact_file.file.filename %>
+<h1><%= @contact_file.file.filename %></h1>
+<span class="badge bg-<%= process_status(@contact_file) %>"><%= @contact_file.status %></span>
+<hr>
 
-<h2>Errors</h2>
-<% @contact_file.errors_log&.split(';')&.each do |error| %>
-  <ul><li><%= error %></li></ul>
+<h2>Errors:</h2>
+<% unless @contact_file.errors_log.nil? %>
+  <% @contact_file.errors_log&.split(';')&.each do |error| %>
+    <ul><li><%= error %></li></ul>
+  <% end %>
+<% else %>
+  <p>There was no error importing the contacts.</p>
 <% end %>
+<hr>
 
 <h2>contacts successfully imported</h2>
 
-<%= render @contact_file.contacts %>
+<table class="table table-striped">
+  <thead>
+    <th>Name</th>
+    <th>Date of birth</th>
+    <th>Phone</th>
+    <th>Address</th>
+    <th>Credit card</th>
+    <th>Credit card network</th>
+    <th>Email</th>
+    <th>Imported at</th>
+  </thead>
+  <tbody>
+    <%= render @contact_file.contacts %>
+  </tbody>
+<table>

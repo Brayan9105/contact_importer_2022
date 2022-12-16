@@ -1,6 +1,6 @@
 <h1>Imported Files</h1>
 
-<table>
+<table class="table table-striped">
   <thead>
     <th>File name</th>
     <th>File status</th>
@@ -9,9 +9,12 @@
   <tbody>
     <% @contact_files.each do |contact_file| %>
       <tr>
-        <td><%= contact_file.file.filename %></td>
-        <td><%= contact_file.status %></td>
+        <td><%= link_to contact_file.file.filename, contact_file_path(contact_file) %></td>
+        <td>
+          <span class="badge bg-<%= process_status(contact_file) %>"><%= contact_file.status %></span>
+        </td>
         <td><%= contact_file.created_at %></td>
+        <td><%= link_to "View", contact_file_path(contact_file), class: "btn btn-info" %></td>
       </tr>
     <% end %>
   </tbody>

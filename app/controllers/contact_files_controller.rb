@@ -34,7 +34,7 @@ class ContactFilesController < ApplicationController
   # Saves the contact file in db then enqueue a job and render the index view,
   # if the validations fail, return the instance with the errors and render the new view
   #
-  # param [Hash] contact_file_params the params to create a contact file
+  # @param [Hash] contact_file_params the params to create a contact file
   def create
     @contact_file = current_user.contact_files.build(contact_file_params)
 

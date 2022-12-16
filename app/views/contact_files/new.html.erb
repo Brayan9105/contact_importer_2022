@@ -1,26 +1,52 @@
+<h1>Import contact file</h1>
+
 <%= form_with model: @contact_file do |form| %>
   <%= form.label :contact_file %>:
-  <%= form.file_field :file %>
-
+  <%= form.file_field :file, class: "form-control", required: true %>
   <%= form.fields_for :contact_columns do |f| %>
-    <%= f.label :name %>:
-    <%= f.text_field :name %>
+    <div class="card mt-3">
+      <div class="card-body">
 
-    <%= f.label :date_of_birth %>:
-    <%= f.text_field :date_of_birth %>
+        <div class="my-3">
+          <p>Type the name of the column as it is in the file, for example if the column that represents the contacts name is Friend Name, then you must type in the Name field, Friend Name.</p>
+        <div>
 
-    <%= f.label :phone %>:
-    <%= f.text_field :phone %>
+        <div class="my-3">
+          <%= f.label :name, class: "form-label" %>
+          <%= f.text_field :name, class: "form-control" %>
+        <div>
 
-    <%= f.label :address %>:
-    <%= f.text_field :address %>
+        <div class="my-3">
+          <%= f.label :date_of_birth, class: "form-label" %>:
+          <%= f.text_field :date_of_birth, class: "form-control" %>
+        <div>
+
+        <div class="my-3">
+            <%= f.label :phone, class: "form-label" %>:
+            <%= f.text_field :phone, class: "form-control" %>
+        <div>
+
+        <div class="my-3">
+          <%= f.label :address, class: "form-label" %>:
+          <%= f.text_field :address, class: "form-control" %>
+        <div>
+
+        <div class="my-3">
+          <%= f.label :credit_card_number, class: "form-label" %>:
+          <%= f.text_field :credit_card_number, class: "form-control" %>
+        <div>
+
+        <div class="my-3">
+          <%= f.label :email, class: "form-label" %>:
+          <%= f.text_field :email, class: "form-control" %>
+        <div>
+
+      </div>
+    </div>
     
-    <%= f.label :credit_card_number %>:
-    <%= f.text_field :credit_card_number %>
-
-    <%= f.label :email %>:
-    <%= f.text_field :email %>
   <% end %>
 
-  <%= form.submit 'Import contact file' %>
+ <div class="my-3">
+  <%= form.submit 'Import contact file', class: "btn btn-lg btn-primary" %>
+  <div>
 <% end %>
